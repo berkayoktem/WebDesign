@@ -1,0 +1,61 @@
+body{
+	
+}
+
+#container{
+	width:960px;
+	margin: 0 auto;
+	font-family: "Myriad Pro";
+}
+
+#topLeft{
+	width: 640px;
+	height: 29px;
+	background-color: #064768;
+	float: left;
+}
+
+#topRight{
+	width: 320px;
+	height: 45px;
+	background-color: #064768;
+	float: left;
+}
+
+#logo{
+	width: 170px;
+	height: 80px;
+	float:left;
+}
+
+#kur{
+	width: 463px;
+	height: 80px;
+	float:left;
+}
+
+#dolar{
+	width: 13px;
+	height: 19px;
+}
+
+#euro{
+	width: 13px;
+	height: 19px;
+}
+
+#gold{
+	width: 13px;
+	height: 19px;
+}
+
+#sun{
+	width: 13px;
+	height: 19px;
+}
+
+.yazi{
+	font-family: Myriad Pro;
+	font-size: 21px;
+	color: #9c9c9c;
+}

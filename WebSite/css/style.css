@@ -32,6 +32,10 @@ body{
 	width: 463px;
 	height: 80px;
 	float:left;
+	vertical-align: middle;
+	border-bottom-width: 6px;
+	border-bottom-color: #064768;
+	border-bottom-style: solid;
 }
 
 #dolar{
@@ -58,4 +62,20 @@ body{
 	font-family: Myriad Pro;
 	font-size: 21px;
 	color: #9c9c9c;
+}
+
+.kategori{
+	font-family: Myriad Pro;
+	font-size: 16px;
+	color: red;
+}
+
+#kategori{
+	width: 263px;
+	height: 80px;
+	float:left;
+
+	border-bottom-width: 6px;
+	border-bottom-color: #064768;
+	border-bottom-style: solid;
 }

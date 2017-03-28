@@ -28,15 +28,87 @@ body{
 	float: left;
 	padding-left: 5px;
 	padding-top: 5px;
+	display: inline-block;
 }
 
-#category{
-	border: none;
+.logoArea{
+	float: left;
+	margin: 12px 19px 8px 0;
+}
+
+
+
+
+
+.inputs {
+  float: left;
+}
+
+.search-container{
+	float: left;
+	width: 180px;
+	height: 24px;
+	display: block;
+	margin: 0 auto;
+}
+
+input#search-bar{
+	margin-left: 4px;
+	margin-top: 18px;
+	float: left;
+	height: 24px;
+	width: 100%;
+	padding: 0 20px;
+	font-family: "Gill Sans","Gill Sans MT",Calibri,sans-serif;
+	font-size: 1rem;
 	font-style: italic;
-	font-size: 18px;
+	border: 1px solid #D0CFCE;
+	outline: none;
+	&:focus{
+		border: 1px solid #008ABF;
+		transition: 0.35s ease;
+		color: #008ABF;
+		
+		&::-webkit-input-placeholder {
+			transition: opacity 0.45s ease; 
+			opacity: 0;
+		}
+		&::-moz-placeholder {
+			transition: opacity 0.45s ease; 
+			opacity: 0;
+		}
+		&:-ms-placeholder {
+			transition: opacity 0.45s ease; 
+			opacity: 0;
+		}    
+	}
+}
+
+.search-icon{
+	margin-top: 14px;
+	position: relative;
+	float: right;
+	width: 70px;
+	height: 70px;
+	top: -62px;
+	right: -65px;
+	padding-right: 4px;
+}
+
+
+
+
+#category{
+	height: 24px;
+	border: 1px solid #D0CFCE;
+	font-size: 1rem;
+	font-family: "Gill Sans","Gill Sans MT",Calibri,sans-serif;
+	font-style: italic;
 	color: #9c9c9c;
 	margin-left: 14px;
 	margin-top: 18px;
+	margin-right: 8px;
+	float: left;
 }
 
 #searchLocation{
@@ -67,7 +139,6 @@ body{
 	width: 760px;
 	height: 520px;
 	float: left;
-	background-color: red;
 }
 
 #options{

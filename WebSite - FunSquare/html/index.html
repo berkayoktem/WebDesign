@@ -4,9 +4,52 @@
 	<meta charset="UTF-8">
 	<title>CULTURE & ART CENTERS</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery-popup.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	
+	<script src="../javascript/jquery-popup.js"></script>
+	
+	<!--<script
+		src = "../javascript/index.js">
+	</script>-->
+	
+	<!--<script>
+		$(document).ready(function(){
+			$(".button").click(function(){
+				$("#headerLeft").toggle('slow');
+			});
+		});
+	</script>-->
 </head>
 
 <body>
+	<!--Login Form -->
+	<div id="signinDiv">
+		<form class="form" action="#" id="login">
+			<!--<img class="btnCancel" src="../icons/close-login.png" id="cancel">-->
+			<h3>Giriş Yap</h3>
+			</hr></br>
+			<label>Kullanıcı Adı: </label>
+			</br>
+			<input type="text" id="username" placeholder="example - berkay"/></br>
+			</br>
+			<label>Şifre: </label>
+			</br>
+			<input type="text" id="password" placeholder="***********"/></br>
+			</br>
+			<input type="button" id="loginBtn" value="Giriş"/>
+			<input type="button" id="cancelBtn" value="İptal"/>
+			<a href="#" id="forgotPassword">Şifremi Unuttum</a>
+		</form>
+	</div>
+	
+	<div id="signup">
+	</div>
+
+
+	
 	<div id="container">
 		<div id="headerLeft">
 			<div class="logoArea">
@@ -30,8 +73,8 @@
 			</div>
 		</div>
 		<div id="headerRight">
-			<input class="button" type="submit" value="Kayıt Ol"/>
-			<input class="button" type="submit" value="Giriş Yap"/>
+			<input id="buttonSignup" onclick="submitClick" type="submit" value="Kayıt Ol"/>
+			<input id="buttonSignin" onclick="submitClick" type="submit" value="Giriş Yap"/>
 		</div>
 		<div id="map">
 			<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d17680.97921303446!2d27.13549635745744!3d38.42795276706987!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1490700046750" width="760" height="520" frameborder="0" style="border:0" allowfullscreen></iframe>

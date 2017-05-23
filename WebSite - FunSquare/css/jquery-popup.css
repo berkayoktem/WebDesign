@@ -127,15 +127,21 @@ textarea{
 #signupDiv{
 	opacity:0.92;
 	position: absolute;
-	
+	top: 0px;
+	left: 0px;
 	height: 100%;
+	width: 100%;
+	background: #000;
+	display: none;
+	
+	/*height: 100%;
 	width: 100%;
 	background: #000;
 	display: none;
 	
 	top:50%;
     left:50%;
-    margin:-50px 0 0 -100px; /* [-(height/2)px 0 0 -(width/2)px] */
+    margin:-50px 0 0 -100px; *//* [-(height/2)px 0 0 -(width/2)px] */
 }
 
 #login,#contact,#signup{

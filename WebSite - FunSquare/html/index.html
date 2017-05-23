@@ -10,10 +10,45 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	
 	<script src="../javascript/jquery-popup.js"></script>
+	<script src = "../javascript/index.js"></script>
 	
-	<!--<script
-		src = "../javascript/index.js">
-	</script>-->
+	
+	<script>
+		var map;
+		function initMap(){
+			var izmir = {lat:38.385947, lng:27.181670};
+			map = new google.maps.Map(document.getElementById('map'),{
+				zoom:13,
+				center:izmir
+			}); 
+			
+			var mapScript = document.createElement('mapScript');
+			mapScript.src = "/Users/TOSHIBA/Documents/tempjson.json";
+			//document.getElementByTagName('head')[0].appendChild(mapScript);
+			}
+			window.funsquare_callback = function(results) {
+				for(var i = 0; i < results.features.length; i++) {
+					var coords = results.features[i].geometry.coordinates;
+					var latLng = new google.maps.LatLng(coord[1],coords[0]);
+					var marker = new google.maps.Marker({
+						position: latLng,
+						map: map
+					});
+				}
+			}
+			
+			/*var marker = new google.maps.Marker({
+				position:izmir,
+				map:map
+			});*/
+		};
+	</script>
+	
+	<script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyDuUCr27TaESeae54tXQWWuaEY8bU1NpW4&callback=initMap">
+	
+	</script>
+	
+	
 	
 	<!--<script>
 		$(document).ready(function(){
@@ -99,7 +134,10 @@
 			<input id="buttonSignin" onclick="showPopup('signinDiv');" type="submit" value="Giriş Yap"/>
 		</div>
 		<div id="map">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d17680.97921303446!2d27.13549635745744!3d38.42795276706987!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1490700046750" width="760" height="520" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d17680.97921303446!2d27.13549635745744!3d38.42795276706987!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1490700046750" width="760" height="520" frameborder="0" style="border:0" allowfullscreen></iframe>
+			-->
+
+			
 		</div>
 		<div id="options">
 			<div class="option">

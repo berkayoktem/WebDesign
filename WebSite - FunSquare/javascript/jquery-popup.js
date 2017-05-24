@@ -4,7 +4,16 @@ $(document).ready(function() {
 		$("#logindiv").css("display", "block");
 	}*/
 	
+	function showPopup(id) {
+		var popup = document.getElementById(id);
+		popup.style.display = 'block';
+	}
+	
 	$("#login #cancelBtn").click(function() {
+		$(this).parent().parent().hide();
+	});
+	
+	$("#signup #cancelBtn").click(function() {
 		$(this).parent().parent().hide();
 	});
 
@@ -18,6 +27,10 @@ $(document).ready(function() {
 	
 	$("#buttonSignin").click(function() {
 		$("#signinDiv").css("display", "block");
+	});
+	
+	$("#buttonSignup").click(function() {
+		$("#signupDiv").css("display", "block");
 	});
 	
 	// Contact form popup send-button click event.

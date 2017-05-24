@@ -6,16 +6,19 @@
 	font-family: 'Fauna One', serif;
 	display:block;
 }
+
 h2{
 	margin-left: 65px;
 	text-shadow:1px 0px 3px gray;
 }
+
 h3{
 	font-size:18px;
 	text-align:center;
 	text-shadow:1px 0px 3px gray;
 	font-family: "Gill Sans","Gill Sans MT",Calibri,sans-serif;
 }
+
 #onclick{
 	padding:3px;
 	color:green;
@@ -27,13 +30,16 @@ h3{
 	box-shadow:1px 1px 5px grey;
 	border-radius:3px;
 	}
+
 b{
 	font-size:18px;
 	text-shadow:1px 0px 3px gray;
 }
+
 #popup{
 	padding-top:80px;
 }
+
 .form{
 	border-radius:2px;
 	padding:20px 30px;
@@ -45,6 +51,7 @@ b{
 	float:left;
 	font-family: "Gill Sans","Gill Sans MT",Calibri,sans-serif;
 }
+
 input{
 	width:100%;
 	height:35px;
@@ -94,6 +101,7 @@ textarea{
 	padding:5px;
 	resize:none;
 }
+
 #contactdiv{
 	opacity:0.92;
 	position: absolute;
@@ -104,6 +112,7 @@ textarea{
 	background: #000;
 	display: none;
 }
+
 #signinDiv{
 	opacity:0.92;
 	position: absolute;
@@ -115,7 +124,27 @@ textarea{
 	display: none;
 }
 
-#login,#contact{
+#signupDiv{
+	opacity:0.92;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	display: none;
+	
+	/*height: 100%;
+	width: 100%;
+	background: #000;
+	display: none;
+	
+	top:50%;
+    left:50%;
+    margin:-50px 0 0 -100px; *//* [-(height/2)px 0 0 -(width/2)px] */
+}
+
+#login,#contact,#signup{
 	width:350px;
 	margin:0px;
 	background-color:white;
@@ -123,18 +152,28 @@ textarea{
 	border: 5px solid #A52A2A;
 	font-family: "Gill Sans","Gill Sans MT",Calibri,sans-serif;
 }
+
 .btnCancel{
 	float: right;
 	margin-top: -35px;
 	margin-right: -37px;
 }
+
 #contact{
 	left: 50%;
 	top: 50%;
 	margin-left:-210px;
 	margin-top:-255px;
 }
+
 #login{
+	left: 50%;
+	top: 50%;
+	margin-left:-210px;
+	margin-top:-158px;
+}
+
+#signup{
 	left: 50%;
 	top: 50%;
 	margin-left:-210px;

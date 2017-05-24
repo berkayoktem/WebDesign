@@ -10,10 +10,12 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	
 	<script src="../javascript/jquery-popup.js"></script>
+	<script src = "../javascript/index.js"></script>
 	
-	<!--<script
-		src = "../javascript/index.js">
-	</script>-->
+	
+
+	
+	
 	
 	<!--<script>
 		$(document).ready(function(){
@@ -25,6 +27,9 @@
 </head>
 
 <body>
+
+
+	
 	<!--Login Form -->
 	<div id="signinDiv">
 		<form class="form" action="#" id="login">
@@ -45,11 +50,33 @@
 		</form>
 	</div>
 	
-	<div id="signup">
+	<!--Signup Form-->
+	<div id="signupDiv">
+		<form class="form" action="#" id="signup">
+			<!--<img class="btnCancel" src="../icons/close-login.png" id="cancel">-->
+			<h3>Kayıt Ol</h3>
+			</hr></br>
+			<label>Kullanıcı Adı: </label>
+			</br>
+			<input type="text" id="username" placeholder="example - berkay"/></br>
+			</br>
+			<label>E-posta: </label>
+			</br>
+			<input type="text" id="username" placeholder="example - berkay@oktem.com"/></br>
+			</br>
+			<label>Şifre: </label>
+			</br>
+			<input type="text" id="password" placeholder="***********"/></br>
+			</br>
+			<label>Şifre Onay: </label>
+			</br>
+			<input type="text" id="password" placeholder="***********"/></br>
+			</br>
+			<input type="button" id="loginBtn" value="Kayıt Ol"/>
+			<input type="button" id="cancelBtn" value="İptal"/>
+		</form>
 	</div>
 
-
-	
 	<div id="container">
 		<div id="headerLeft">
 			<div class="logoArea">
@@ -73,12 +100,56 @@
 			</div>
 		</div>
 		<div id="headerRight">
-			<input id="buttonSignup" onclick="submitClick" type="submit" value="Kayıt Ol"/>
-			<input id="buttonSignin" onclick="submitClick" type="submit" value="Giriş Yap"/>
+			<input id="buttonSignup" onclick="showPopup('signupDiv');" type="submit" value="Kayıt Ol"/>
+			<input id="buttonSignin" onclick="showPopup('signinDiv');" type="submit" value="Giriş Yap"/>
 		</div>
 		<div id="map">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d17680.97921303446!2d27.13549635745744!3d38.42795276706987!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1490700046750" width="760" height="520" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d17680.97921303446!2d27.13549635745744!3d38.42795276706987!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1490700046750" width="760" height="520" frameborder="0" style="border:0" allowfullscreen></iframe>
+			-->
+
+			
 		</div>
+			<script>
+		var map;
+		function initMap(){
+			var izmir = {lat:38.385947, lng:27.181670};
+			map = new google.maps.Map(document.getElementById('map'),{
+				zoom:13,
+				center:izmir
+			}); 
+			
+			var mapScript = document.createElement('script');
+			mapScript.src = "../javascript/tempjson.js";
+			document.getElementById('map').appendChild(mapScript);
+		}
+			
+		window.funsquare_callback = function(results) {
+			console.log(results);
+			//var izmir = {lat:38.385947, lng:27.181670};
+			for(var i = 0; i < results.features.length; i++) {
+				var coords = results.features[i].geometry.coordinates;
+				/*var latLng = {}
+				latLng.lat = coords[0]
+				latLng.lng = coords[1]*/
+				var latLng = new google.maps.LatLng(coords[1],coords[0]);
+				console.log(latLng)
+				var marker = new google.maps.Marker({
+					position: latLng,
+					map: map
+				});
+			}
+			
+		}
+			
+			/*var marker = new google.maps.Marker({
+				position:izmir,
+				map:map
+			});*/
+	</script>
+	
+	<script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyDuUCr27TaESeae54tXQWWuaEY8bU1NpW4&callback=initMap">
+	
+	</script>
 		<div id="options">
 			<div class="option">
 				<a href="#"><img class="optionPic" src="../image/cinema.jpg" /></a>

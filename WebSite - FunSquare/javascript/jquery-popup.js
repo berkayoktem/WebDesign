@@ -1,8 +1,4 @@
 $(document).ready(function() {
-	//setTimeout(popup, 3000);
-	/*function popup() {
-		$("#logindiv").css("display", "block");
-	}*/
 	
 	function showPopup(id) {
 		var popup = document.getElementById(id);
@@ -60,6 +56,7 @@ $(document).ready(function() {
 			}
 		}
 	});
+	
 	// Login form popup login-button click event.
 	$("#loginbtn").click(function() {
 		var name = $("#username").val();

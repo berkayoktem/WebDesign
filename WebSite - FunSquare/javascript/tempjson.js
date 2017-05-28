@@ -9,8 +9,13 @@ funsquare_callback({
     	"count": 290
   	},
   	"features": [
-  		{"type":" Feature","geometry":{"type":"Point","coordinates":[38.385947,27.181670,10]},"id":"asd123"},
-  		{"type":" Feature","geometry":{"type":"Point","coordinates":[34.385947,25.181670,10]},"id":"asd124"},
-  		{"type":" Feature","geometry":{"type":"Point","coordinates":[36.385947,29.181670,10]},"id":"asd125"}
+  		{"type":" Feature","geometry":{"type":"Point","coordinates":[38.427812,27.134823,10]},"id":"location1"},
+  		{"type":" Feature","geometry":{"type":"Point","coordinates":[38.433733,27.139462,10]},"id":"location2"},
+  		{"type":" Feature","geometry":{"type":"Point","coordinates":[38.438777,27.142832,10]},"id":"location3"},
+  		{"type":" Feature","geometry":{"type":"Point","coordinates":[38.430704,27.141965,10]},"id":"location4"},
+  		{"type":" Feature","geometry":{"type":"Point","coordinates":[38.427676,27.143455,10]},"id":"location5"},
+  		{"type":" Feature","geometry":{"type":"Point","coordinates":[38.437555,27.144488,10]},"id":"location6"},
+  		{"type":" Feature","geometry":{"type":"Point","coordinates":[38.433333,27.141131,10]},"id":"location7"},
+  		{"type":" Feature","geometry":{"type":"Point","coordinates":[38.437711,27.146535,10]},"id":"location8"}
   	]
 });

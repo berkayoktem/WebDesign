@@ -1,0 +1,10 @@
+[ 
+  {"name": "Karaca Sineması", "code": "KRS"}, 
+  {"name": "Han Tiyatrosu", "code": "HAN"}, 
+  {"name": "Nazım Hikmet Kültür Merkezi", "code": "NHKM"}, 
+  {"name": "Sinema Pier", "code": "PIER"}, 
+  {"name": "Mask Müzesi", "code": "MASK"},
+  {"name": "İzmir Sineması", "code": "İZS"}, 
+  {"name": "Fuar Tiyatrosu", "code": "FUAR"}, 
+  {"name": "İzmir Sanat Merkezi", "code": "İZSM"}
+]

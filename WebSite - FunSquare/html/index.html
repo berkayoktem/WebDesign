@@ -7,66 +7,24 @@
 	<link rel="stylesheet" type="text/css" href="../css/jquery-popup.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+
+	<script src="../lib/jquery.easy-autocomplete.min.js"></script>
+	<link rel="stylesheet" href="../lib/easy-autocomplete.min.css">
+	<!--<link rel="stylesheet" href="../lib/easy-autocomplete.themes.min.css">-->
+
+
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css">
 	
+
 	<script src="../javascript/jquery-popup.js"></script>
 	<script src = "../javascript/index.js"></script>
 	
-	
-<<<<<<< HEAD
-	<script>
-		var map;
-		function initMap(){
-			var izmir = {lat:38.385947, lng:27.181670};
-			map = new google.maps.Map(document.getElementById('map'),{
-				zoom:13,
-				center:izmir
-			}); 
-			
-			var mapScript = document.createElement('mapScript');
-			mapScript.src = "/Users/TOSHIBA/Documents/tempjson.json";
-			//document.getElementByTagName('head')[0].appendChild(mapScript);
-			}
-			window.funsquare_callback = function(results) {
-				for(var i = 0; i < results.features.length; i++) {
-					var coords = results.features[i].geometry.coordinates;
-					var latLng = new google.maps.LatLng(coord[1],coords[0]);
-					var marker = new google.maps.Marker({
-						position: latLng,
-						map: map
-					});
-				}
-			}
-			
-			/*var marker = new google.maps.Marker({
-				position:izmir,
-				map:map
-			});*/
-		};
-	</script>
-	
-	<script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyDuUCr27TaESeae54tXQWWuaEY8bU1NpW4&callback=initMap">
-	
-	</script>
-=======
 
->>>>>>> master
-	
-	
-	
-	<!--<script>
-		$(document).ready(function(){
-			$(".button").click(function(){
-				$("#headerLeft").toggle('slow');
-			});
-		});
-	</script>-->
+
 </head>
 
 <body>
 
-
-	
 	<!--Login Form -->
 	<div id="signinDiv">
 		<form class="form" action="#" id="login">
@@ -134,61 +92,105 @@
 					<input type="text" id="search-bar" placeholder="Konum Giriniz">
 					<a href="#"><img class="search-icon" src="../icons/search-icon.png"></a>
 				</form>
+				<script>
+			
+					var options = {
+						//url: "../json/colors.js"
+						data: [ 
+						  "Karaca Sineması", 
+						  "Han Tiyatrosu", 
+						  "Nazım Hikmet Kültür Merkezi", 
+						  "Sinema Pier",
+						  "Mask Müzesi",
+						  "İzmir Sineması", 
+						  "Fuar Tiyatrosu",
+						  "İzmir Sanat Merkezi"
+						],
+						list: {
+							match: {
+								enabled: true
+							}
+						},
+						theme: "square"
+					};
+				
+					$("#search-bar").easyAutocomplete(options);
+						
+				</script>
 			</div>
+
 		</div>
 		<div id="headerRight">
 			<input id="buttonSignup" onclick="showPopup('signupDiv');" type="submit" value="Kayıt Ol"/>
 			<input id="buttonSignin" onclick="showPopup('signinDiv');" type="submit" value="Giriş Yap"/>
 		</div>
+		
 		<div id="map">
-			<!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d17680.97921303446!2d27.13549635745744!3d38.42795276706987!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1490700046750" width="760" height="520" frameborder="0" style="border:0" allowfullscreen></iframe>
-			-->
-
-			
 		</div>
-			<script>
-		var map;
-		function initMap(){
-			var izmir = {lat:38.385947, lng:27.181670};
-			map = new google.maps.Map(document.getElementById('map'),{
-				zoom:13,
-				center:izmir
-			}); 
-			
-			var mapScript = document.createElement('script');
-			mapScript.src = "../javascript/tempjson.js";
-			document.getElementById('map').appendChild(mapScript);
-		}
-			
-		window.funsquare_callback = function(results) {
-			console.log(results);
-			//var izmir = {lat:38.385947, lng:27.181670};
-			for(var i = 0; i < results.features.length; i++) {
-				var coords = results.features[i].geometry.coordinates;
-				/*var latLng = {}
-				latLng.lat = coords[0]
-				latLng.lng = coords[1]*/
-				var latLng = new google.maps.LatLng(coords[1],coords[0]);
-				console.log(latLng)
-				var marker = new google.maps.Marker({
-					position: latLng,
-					map: map
-				});
+		
+		<script>
+			var map;
+			var home;
+			var markersArr = [];
+			var lastChar;
+			function initMap() {
+				home = {lat:38.433236, lng:27.142346};
+				map = new google.maps.Map(document.getElementById('map'),{
+					zoom:15,
+					center:home
+				}); 
+				
+				var mapScript = document.createElement('script');
+				mapScript.src = "../javascript/tempjson.js";
+				document.getElementById('map').appendChild(mapScript);
+			}
+				
+			window.funsquare_callback = function(results) {
+				markersArr = results;
+				for(var i = 0; i < results.features.length; i++) {
+					var coords = results.features[i].geometry.coordinates;
+					var latLng = new google.maps.LatLng(coords[0],coords[1]);
+				}
 			}
 			
-		}
+			function showMarker(location) {
+				var latlong;
+				for(var i  = 0; i < markersArr.features.length; i++) {
+					if(markersArr.features[i].id == location) {
+						lastChar = markersArr.features[i].id.substr(markersArr.features[i].id.length-1);
+						var coords = markersArr.features[i].geometry.coordinates;
+						latlong = new google.maps.LatLng(coords[0],coords[1]);
+						var marker = new google.maps.Marker({
+							position: latlong,
+							map: map,
+							draggable: true,
+							animation: google.maps.Animation.DROP,
+							label: lastChar
+						});
+					}
+				}
+			}
 			
-			/*var marker = new google.maps.Marker({
-				position:izmir,
-				map:map
-			});*/
-	</script>
+			function toggleBounce() {
+				if(marker.getAnimation() !== null) {
+					marker.setAnimation(null);
+				}
+				else {
+					marker.setAnimation(google.maps.Animation.BOUNCE);
+				}
+			}
+			
+		    function clearMarkers() {
+
+			}
+
+		</script>
 	
-	<script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyDuUCr27TaESeae54tXQWWuaEY8bU1NpW4&callback=initMap">
-	
-	</script>
+		<script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyDuUCr27TaESeae54tXQWWuaEY8bU1NpW4&callback=initMap">
+		
+		</script>
 		<div id="options">
-			<div class="option">
+			<div class="option" id="location1" onclick="showMarker('location1');" type="submit">
 				<a href="#"><img class="optionPic" src="../image/cinema.jpg" /></a>
 				<a href="#" class="optionName">1. Sinema ASD</a>
 				<label class="optionPoint">9.3</label>
@@ -197,7 +199,7 @@
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
-			<div class="option">
+			<div class="option" id="location2" onclick="showMarker('location2');" type="submit">
 				<a href="#"><img class="optionPic" src="../image/cinema.jpg" /></a>
 				<a href="#" class="optionName">2. ASD Tiyatrosu</a>
 				<label class="optionPoint">9.1</label>
@@ -206,7 +208,7 @@
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
-			<div class="option">
+			<div class="option" id="location3" onclick="showMarker('location3');" type="submit">
 				<a href="#"><img class="optionPic" src="../image/cinema.jpg" /></a>
 				<a href="#" class="optionName">3. QWE Sanat Merkezi</a>
 				<label class="optionPoint">8.8</label>
@@ -215,7 +217,7 @@
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
-			<div class="option">
+			<div class="option" id="location4" onclick="showMarker('location4');" type="submit">
 				<a href="#"><img class="optionPic" src="../image/cinema.jpg" /></a>
 				<a href="#" class="optionName">4. Sinema ZXC</a>
 				<label class="optionPoint">8.7</label>
@@ -224,7 +226,7 @@
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
-			<div class="option">
+			<div class="option" id="location5" onclick="showMarker('location5');" type="submit">
 				<a href="#"><img class="optionPic" src="../image/cinema.jpg" /></a>
 				<a href="#" class="optionName">5. ASD Müzesi</a>
 				<label class="optionPoint">8.2</label>
@@ -233,7 +235,7 @@
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
-			<div class="option">
+			<div class="option" id="location6" onclick="showMarker('location6');" type="submit">
 				<a href="#"><img class="optionPic" src="../image/cinema.jpg" /></a>
 				<a href="#" class="optionName">6. SinemaX</a>
 				<label class="optionPoint">7.9</label>
@@ -242,7 +244,7 @@
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
-			<div class="option">
+			<div class="option" id="location7" onclick="showMarker('location7');" type="submit">
 				<a href="#"><img class="optionPic" src="../image/cinema.jpg" /></a>
 				<a href="#" class="optionName">7. CVB Tiyatrosu</a>
 				<label class="optionPoint">7.7</label>
@@ -251,7 +253,7 @@
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
-			<div class="option">
+			<div class="option" id="location8" onclick="showMarker('location8');" type="submit">
 				<a href="#"><img class="optionPic" src="../image/cinema.jpg" /></a>
 				<a href="#" class="optionName">8. KLM Sanat Merkezi</a>
 				<label class="optionPoint">7.4</label>

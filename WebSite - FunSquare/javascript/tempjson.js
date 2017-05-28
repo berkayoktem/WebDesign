@@ -1,0 +1,16 @@
+funsquare_callback({
+	"type": "FeatureCollection",
+	"metadata": {
+    	"generated": 1494837553000,
+    	"url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp",
+    	"title": "USGS Magnitude 2.5+ Earthquakes, Past Week",
+    	"status": 200,
+    	"api": "1.5.7",
+    	"count": 290
+  	},
+  	"features": [
+  		{"type":" Feature","geometry":{"type":"Point","coordinates":[38.385947,27.181670,10]},"id":"asd123"},
+  		{"type":" Feature","geometry":{"type":"Point","coordinates":[34.385947,25.181670,10]},"id":"asd124"},
+  		{"type":" Feature","geometry":{"type":"Point","coordinates":[36.385947,29.181670,10]},"id":"asd125"}
+  	]
+});

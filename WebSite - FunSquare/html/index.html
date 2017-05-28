@@ -13,6 +13,7 @@
 	<script src = "../javascript/index.js"></script>
 	
 	
+<<<<<<< HEAD
 	<script>
 		var map;
 		function initMap(){
@@ -47,6 +48,9 @@
 	<script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyDuUCr27TaESeae54tXQWWuaEY8bU1NpW4&callback=initMap">
 	
 	</script>
+=======
+
+>>>>>>> master
 	
 	
 	
@@ -60,6 +64,9 @@
 </head>
 
 <body>
+
+
+	
 	<!--Login Form -->
 	<div id="signinDiv">
 		<form class="form" action="#" id="login">
@@ -139,6 +146,47 @@
 
 			
 		</div>
+			<script>
+		var map;
+		function initMap(){
+			var izmir = {lat:38.385947, lng:27.181670};
+			map = new google.maps.Map(document.getElementById('map'),{
+				zoom:13,
+				center:izmir
+			}); 
+			
+			var mapScript = document.createElement('script');
+			mapScript.src = "../javascript/tempjson.js";
+			document.getElementById('map').appendChild(mapScript);
+		}
+			
+		window.funsquare_callback = function(results) {
+			console.log(results);
+			//var izmir = {lat:38.385947, lng:27.181670};
+			for(var i = 0; i < results.features.length; i++) {
+				var coords = results.features[i].geometry.coordinates;
+				/*var latLng = {}
+				latLng.lat = coords[0]
+				latLng.lng = coords[1]*/
+				var latLng = new google.maps.LatLng(coords[1],coords[0]);
+				console.log(latLng)
+				var marker = new google.maps.Marker({
+					position: latLng,
+					map: map
+				});
+			}
+			
+		}
+			
+			/*var marker = new google.maps.Marker({
+				position:izmir,
+				map:map
+			});*/
+	</script>
+	
+	<script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyDuUCr27TaESeae54tXQWWuaEY8bU1NpW4&callback=initMap">
+	
+	</script>
 		<div id="options">
 			<div class="option">
 				<a href="#"><img class="optionPic" src="../image/cinema.jpg" /></a>

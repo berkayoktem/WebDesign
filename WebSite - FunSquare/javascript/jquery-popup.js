@@ -2,7 +2,8 @@ $(document).ready(function() {
 	
 	function showPopup(id) {
 		var popup = document.getElementById(id);
-		popup.style.display = 'block';
+		//popup.style.display = 'block';
+		//$("#map").css("display", "block");
 	}
 	
 	$("#login #cancelBtn").click(function() {
@@ -21,13 +22,7 @@ $(document).ready(function() {
 		$(this).parent().parent().hide();
 	});
 	
-	$("#buttonSignin").click(function() {
-		$("#signinDiv").css("display", "block");
-	});
 	
-	$("#buttonSignup").click(function() {
-		$("#signupDiv").css("display", "block");
-	});
 	
 	// Contact form popup send-button click event.
 	$("#send").click(function() {

@@ -8,23 +8,22 @@
 	<link rel="stylesheet" href="../lib/easy-autocomplete.min.css">
 	<!--<link rel="stylesheet" href="../lib/easy-autocomplete.themes.min.css">-->
 	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css">
-	
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	
-	<script src="../javascript/jquery-popup.js"></script>
-	<script src = "../javascript/index.js"></script>
-	
 	<script src="../lib/jquery.easy-autocomplete.min.js"></script>
+	<script src="../javascript/index.js"></script>
+	<script src="../javascript/jquery-popup.js"></script>
 	
+	
+
 
 </head>
 
 <body>
-
 	<!--Login Form -->
 	<div id="signinDiv">
 		<form class="form" action="#" id="login">
-			<!--<img class="btnCancel" src="../icons/close-login.png" id="cancel">-->
+			<!--<img class="btnCancel" src="../image/close-login.png" id="cancel">-->
 			<h3>Giriş Yap</h3>
 			</hr></br>
 			<label>Kullanıcı Adı: </label>
@@ -44,7 +43,7 @@
 	<!--Signup Form-->
 	<div id="signupDiv">
 		<form class="form" action="#" id="signup">
-			<!--<img class="btnCancel" src="../icons/close-login.png" id="cancel">-->
+			<!--<img class="btnCancel" src="../image/close-login.png" id="cancel">-->
 			<h3>Kayıt Ol</h3>
 			</hr></br>
 			<label>Kullanıcı Adı: </label>
@@ -86,7 +85,7 @@
 			<div class="inputs">
 				<form class="search-container">
 					<input type="text" id="search-bar" placeholder="Konum Giriniz">
-					<a href="#"><img class="search-icon" src="../icons/search-icon.png" onclick="showAllMarker();" type="submit"></a>
+					<a href="#"><img class="search-icon" src="../image/search-icon.png" onclick="showAllMarker();" type="submit"></a>
 				</form>
 				<script>
 			
@@ -116,6 +115,7 @@
 			</div>
 
 		</div>
+
 		<div id="headerRight">
 			<input id="buttonSignup" onclick="showPopup('signupDiv');" type="submit" value="Kayıt Ol"/>
 			<input id="buttonSignin" onclick="showPopup('signinDiv');" type="submit" value="Giriş Yap"/>
@@ -137,7 +137,7 @@
 				<a href="#" class="optionName">1. Sinema ASD</a>
 				<label class="optionPoint">9.3</label>
 				<label class="optionText">Açıklama açıklama</label>
-				<a href="#"><img class="profilePic" src="../icons/profile1.png" /></a>
+				<a href="#"><img class="profilePic" src="../image/profile1.png" /></a>
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
@@ -146,7 +146,7 @@
 				<a href="#" class="optionName">2. ASD Tiyatrosu</a>
 				<label class="optionPoint">9.1</label>
 				<label class="optionText">Açıklama açıklama</label>
-				<a href="#"><img class="profilePic" src="../icons/profile1.png" /></a>
+				<a href="#"><img class="profilePic" src="../image/profile1.png" /></a>
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
@@ -155,7 +155,7 @@
 				<a href="#" class="optionName">3. QWE Sanat Merkezi</a>
 				<label class="optionPoint">8.8</label>
 				<label class="optionText">Açıklama açıklama</label>
-				<a href="#"><img class="profilePic" src="../icons/profile1.png" /></a>
+				<a href="#"><img class="profilePic" src="../image/profile1.png" /></a>
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
@@ -164,7 +164,7 @@
 				<a href="#" class="optionName">4. Sinema ZXC</a>
 				<label class="optionPoint">8.7</label>
 				<label class="optionText">Açıklama açıklama</label>
-				<a href="#"><img class="profilePic" src="../icons/profile1.png" /></a>
+				<a href="#"><img class="profilePic" src="../image/profile1.png" /></a>
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
@@ -173,7 +173,7 @@
 				<a href="#" class="optionName">5. ASD Müzesi</a>
 				<label class="optionPoint">8.2</label>
 				<label class="optionText">Açıklama açıklama</label>
-				<a href="#"><img class="profilePic" src="../icons/profile1.png" /></a>
+				<a href="#"><img class="profilePic" src="../image/profile1.png" /></a>
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
@@ -182,7 +182,7 @@
 				<a href="#" class="optionName">6. SinemaX</a>
 				<label class="optionPoint">7.9</label>
 				<label class="optionText">Açıklama açıklama</label>
-				<a href="#"><img class="profilePic" src="../icons/profile1.png" /></a>
+				<a href="#"><img class="profilePic" src="../image/profile1.png" /></a>
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
@@ -191,7 +191,7 @@
 				<a href="#" class="optionName">7. CVB Tiyatrosu</a>
 				<label class="optionPoint">7.7</label>
 				<label class="optionText">Açıklama açıklama</label>
-				<a href="#"><img class="profilePic" src="../icons/profile1.png" /></a>
+				<a href="#"><img class="profilePic" src="../image/profile1.png" /></a>
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>
@@ -200,7 +200,7 @@
 				<a href="#" class="optionName">8. KLM Sanat Merkezi</a>
 				<label class="optionPoint">7.4</label>
 				<label class="optionText">Açıklama açıklama</label>
-				<a href="#"><img class="profilePic" src="../icons/profile1.png" /></a>
+				<a href="#"><img class="profilePic" src="../image/profile1.png" /></a>
 				<label class="commentDate">Yorum Tarih & Saati</label>
 				<label class="comment">Kullanıcı yorumu kullanıcı yorumu...</label>
 			</div>

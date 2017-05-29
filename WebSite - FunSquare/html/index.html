@@ -90,12 +90,12 @@
 			<div class="inputs">
 				<form class="search-container">
 					<input type="text" id="search-bar" placeholder="Konum Giriniz">
-					<a href="#"><img class="search-icon" src="../icons/search-icon.png"></a>
+					<a href="#"><img class="search-icon" src="../icons/search-icon.png" onclick="showAllMarker();" type="submit"></a>
 				</form>
 				<script>
 			
 					var options = {
-						//url: "../json/colors.js"
+						//url: "../json/locations.js"
 						data: [ 
 						  "Karaca Sineması", 
 						  "Han Tiyatrosu", 
@@ -168,6 +168,18 @@
 							label: lastChar
 						});
 					}
+				}
+			}
+			
+			function showAllMarker() {
+				for(var i = 0; i < markersArr.features.length; i++) {
+					var coords = markersArr.features[i].geometry.coordinates;
+					var latLng = new google.maps.LatLng(coords[0],coords[1]);
+					var marker = new google.maps.Marker({
+						position: latLng,
+						animation: google.maps.Animation.DROP,
+						map: map
+					});
 				}
 			}
 			
